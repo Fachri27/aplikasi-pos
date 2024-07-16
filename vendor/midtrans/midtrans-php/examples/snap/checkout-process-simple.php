@@ -31,7 +31,7 @@ while ($data = mysqli_fetch_array($hasil)) {
     $result_list[] = $data;
 }
 
-// Required
+// build object for transaction detail
 $transaction_details = array(
     'order_id' => $no_penjualan,
     'gross_amount' => $total, // no decimal allowed for creditcard
@@ -48,15 +48,6 @@ foreach ($result_list as $data)
         'name' => $data['nama_barang']
     );
 
-// Optional
-// $customer_details = array(
-//     'first_name'    => "Andri",
-//     'last_name'     => "Litani",
-//     'email'         => "andri@litani.com",
-//     'phone'         => "081122334455",
-//     // 'billing_address'  => $billing_address,
-//     // 'shipping_address' => $shipping_address
-// );
 
 // Fill transaction details
 $transaction = array(
